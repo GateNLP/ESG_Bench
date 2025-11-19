@@ -1,0 +1,14 @@
+name: "esghalu"  # bioasq | esghalu | halueval
+answerable_only: True
+use_context: True
+
+datasets:
+  bioasq:
+    path: ./data/bioasq/test_data.json
+
+  halueval:
+    path: ./data/halueval/test_data.json
+
+  esghalu:
+    path: /home/ssq/ssd/ASIMOV/ESG_Bench/data/esghalu/
+

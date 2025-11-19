@@ -1,0 +1,20 @@
+defaults:
+  - data: default
+  - model: default
+  - prompt: sentence
+
+experiment:
+  name: generate_answers
+  seed: 10
+
+hydra:
+  run:
+    dir: ./outputs/${experiment.name}_${now:%Y-%m-%d}_${now:%H-%M-%S}
+
+p_true:
+  compute: True
+
+num_eval_samples: 400 # debug: 20, full: 400
+
+
+

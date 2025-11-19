@@ -1,0 +1,59 @@
+family: llama            # llama | mistral | gemma
+dataset: esghalu          # bioasq | esghalu | halueval
+variant: before_finetune      # before_finetune | sft | cot_2steps | cot_4steps
+
+paths:
+  llama:
+    before_finetune: "meta-llama/Llama-3.2-3B-Instruct"
+    bioasq:
+      sft: "/home/.../bioasq/llama/sft/checkpoint-xxx"
+      cot_2steps: "/home/.../bioasq/llama/cot2/checkpoint-yyy"
+      cot_4steps: "/home/.../bioasq/llama/cot4/checkpoint-zzz"
+
+    esghalu:
+      sft: "/home/.../esghalu/llama/sft/checkpoint-xxx"
+      cot_2steps: "/home/.../esghalu/llama/cot2/checkpoint-yyy"
+      cot_4steps: "/home/.../esghalu/llama/cot4/checkpoint-zzz"
+
+    halueval:
+      sft: "/home/.../halueval/llama/sft/checkpoint-xxx"
+      cot_2steps: "/home/.../halueval/llama/cot2/checkpoint-yyy"
+      cot_4steps: "/home/.../halueval/llama/cot4/checkpoint-zzz"
+
+  mistral:
+    before_finetune: "mistralai/Mistral-7B-Instruct-v0.3"
+    bioasq:
+      sft: "/home/.../bioasq/mistral/sft/checkpoint"
+      cot_2steps: "/home/.../bioasq/mistral/cot2/checkpoint"
+      cot_4steps: "/home/.../bioasq/mistral/cot4/checkpoint"
+
+    esghalu:
+      sft: "/home/.../esghalu/mistral/sft/checkpoint"
+      cot_2steps: "/home/.../esghalu/mistral/cot2/checkpoint"
+      cot_4steps: "/home/.../esghalu/mistral/cot4/checkpoint"
+
+    halueval:
+      sft: "/home/.../halueval/mistral/sft/checkpoint"
+      cot_2steps: "/home/.../halueval/mistral/cot2/checkpoint"
+      cot_4steps: "/home/.../halueval/mistral/cot4/checkpoint"
+
+  gemma:
+    before_finetune: "google/gemma-2-2b-it"
+    bioasq:
+      sft: "/home/.../bioasq/gemma/sft/checkpoint"
+      cot_2steps: "/home/.../bioasq/gemma/cot2/checkpoint"
+      cot_4steps: "/home/.../bioasq/gemma/cot4/checkpoint"
+
+    esghalu:
+      sft: "/home/.../esghalu/gemma/sft/checkpoint"
+      cot_2steps: "/home/.../esghalu/gemma/cot2/checkpoint"
+      cot_4steps: "/home/.../esghalu/gemma/cot4/checkpoint"
+
+    halueval:
+      sft: "/home/.../halueval/gemma/sft/checkpoint"
+      cot_2steps: "/home/.../halueval/gemma/cot2/checkpoint"
+      cot_4steps: "/home/.../halueval/gemma/cot4/checkpoint"
+
+temperature: 0
+max_new_tokens: 1000  # qa
+num_generations: 0 
