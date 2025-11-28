@@ -1,0 +1,34 @@
+base_model: "mistralai/Mistral-7B-Instruct-v0.3"
+# meta-llama/Llama-3.2-3B-Instruct, google/gemma-2-2b-it
+new_model: "../sft_train/sft_models/halueval/mistral/halueval_QA-SFT-Mistral-7B-Instruct-v0.3"
+
+train_path: "../sft_train/sft_dataset/halueval/halueval_sft_train_fixed.json"
+
+quant:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true
+
+lora:
+  r: 16
+  alpha: 16
+  dropout: 0.2
+  target_modules:
+    - k_proj
+    - gate_proj
+    - v_proj
+    - up_proj
+    - q_proj
+    - o_proj
+    - down_proj
+
+training:
+  batch_size: 48
+  grad_accum: 4
+  epochs: 10
+  lr: 2e-5
+  warmup_steps: 100
+  warmup_ratio: 0.1
+  max_seq_len: 1500
+  logging_steps: 10
