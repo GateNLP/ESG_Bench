@@ -27,6 +27,38 @@ As corporate responsibility increasingly incorporates environmental, social, and
 
 ---
 
+## Supervised Finetuning (SFT)
+
+You can run standard supervised finetuning using:
+
+```angular2html
+sft_train/sft_train.py
+```
+Configure all SFT-related hyperparameters (model, data path, optimizer, training schedule, etc.) in:
+```angular2html
+conf/sft.yaml
+```
+
+## Chain-of-Thought Finetuning (CoT)
+
+To finetune models with ESG-Bench’s task-specific CoT strategies, use:
+```angular2html
+cot_finetune/cot_finetune.py
+```
+
+All CoT-related settings can be configured in:
+```angular2html
+conf/cot.yaml
+```
+
+## Dataset Download
+
+We provide both the **single-page** and **full-report** versions of the ESG-Bench dataset.
+
+**Download:**  
+[dataset_link](https://drive.google.com/drive/folders/1UkcuA6NJGVWcS-1j9EJPtTgT8-oJtAqN?usp=sharing)
+
+
 ## Generation Pipeline
 
 This repository includes a generation framework that supports:
